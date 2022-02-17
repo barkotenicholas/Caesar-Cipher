@@ -10,7 +10,11 @@ public class Encode {
     private final String InputString;
     private String encodedText;
 
-    public Encode(String InputString ,int shiftKey) {
+    public String getEncodedText() {
+        return encodedText;
+    }
+
+    public Encode(String InputString , int shiftKey) {
         this.shiftKey = shiftKey;
         this.InputString = InputString;
         this.encodedText = "";
