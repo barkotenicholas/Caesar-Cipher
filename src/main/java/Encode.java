@@ -6,8 +6,8 @@ public class Encode {
 
 
 
-    private int shiftKey;
-    private String InputString;
+    private final int shiftKey;
+    private final String InputString;
     private String encodedText;
 
     public Encode(String InputString ,int shiftKey) {
