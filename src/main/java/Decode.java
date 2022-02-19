@@ -6,11 +6,14 @@ public class Decode {
 
     private int shiftkey;
     private String cypherString;
-    String cypher;
-    public Decode(String cypherString,int shiftKey) {
+    private String cypher;
+
+
+
+    public Decode(String cypherString, int shiftKey) {
         this.shiftkey = shiftKey;
         this.cypherString = cypherString;
-        cypher = "";
+
     }
 
     public String decode(){
@@ -19,14 +22,18 @@ public class Decode {
 
         for (int i = 0; i< cypherString.length();i++){
 
-            int position = Consts.ALPHABET.indexOf(cypherString.charAt(i));
-            int val =(position - shiftkey) %26;
+          if (cypherString.charAt(i) != ' '){
+              int position = Consts.ALPHABET.indexOf(cypherString.charAt(i));
+              int val =(position - shiftkey) %26;
 
-            if (val < 0)
-                val = Consts.ALPHABET.length() + val;
+              if (val < 0)
+                  val = Consts.ALPHABET.length() + val;
 
-            char replace = Consts.ALPHABET.charAt(val);
-            stringBuilder.append(replace);
+              char replace = Consts.ALPHABET.charAt(val);
+              stringBuilder.append(replace);
+          }else {
+              stringBuilder.append(cypherString.charAt(i));
+          }
         }
         cypher = stringBuilder.toString();
 
@@ -42,4 +49,5 @@ public class Decode {
     public String getCypherString() {
         return cypherString;
     }
+
 }

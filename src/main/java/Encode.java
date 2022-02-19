@@ -10,10 +10,11 @@ public class Encode {
     private final String InputString;
     private String encodedText;
 
-    public Encode(String InputString ,int shiftKey) {
+
+    public Encode(String InputString , int shiftKey) {
         this.shiftKey = shiftKey;
         this.InputString = InputString;
-        this.encodedText = "";
+
     }
 
 
@@ -22,16 +23,21 @@ public class Encode {
         String message = InputString.toLowerCase(Locale.ROOT);
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0;i < message.length();i++) {
-            int position = Consts.ALPHABET.indexOf(message.charAt(i));
-            int val = (this.shiftKey+position)%26;
-            char replace = Consts.ALPHABET.charAt(val);
-            stringBuilder.append(replace);
+
+            if (message.charAt(i) != ' '){
+                int position = Consts.ALPHABET.indexOf(message.charAt(i));
+                int val = (this.shiftKey+position)%26;
+                char replace = Consts.ALPHABET.charAt(val);
+                stringBuilder.append(replace);
+            }else {
+                stringBuilder.append(message.charAt(i));
+            }
 
         }
 
-        encodedText= stringBuilder.toString();
+        this.encodedText = stringBuilder.toString();
 
-        return encodedText;
+        return this.encodedText;
     }
 
     public int getShiftKey() {
@@ -41,4 +47,8 @@ public class Encode {
     public String getInputString() {
         return InputString;
     }
+    public String getEncodedText() {
+        return this.encodedText;
+    }
+
 }
