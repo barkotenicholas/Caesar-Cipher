@@ -1,6 +1,5 @@
-# caesar cypher
+ # caesar cypher
 - This application encodes an input text to create an cypher using a shiftkey
----
 ---
 **Version1.0.0**
 
