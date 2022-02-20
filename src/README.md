@@ -36,10 +36,6 @@
 
 <a href="mailto:barkotenicholas@gmail.com">barkotenicholas@gmail.com</a>
 
-## Live Link
-
-
-[Click here to see the website](https://barkotenicholas.github.io/pizza/)
 
 
 ## License & copyright
